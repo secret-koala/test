@@ -1,5 +1,7 @@
 import pandas as pd
 import requests
+import thefuzz
+import io
 from io import BytesIO
 from thefuzz import process
 import streamlit as st
