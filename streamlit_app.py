@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import requests
-from io import BytesIO
 from thefuzz import process
 import streamlit as st
 import plotly.express as px
@@ -30,9 +29,7 @@ def import_and_clean(sheet_name: int = 0) -> pd.DataFrame:
         "econ8320semesterproject/raw/main/"
         "UNO%20Service%20Learning%20Data%20Sheet%20De-Identified%20Version.xlsx"
     )
-    resp = requests.get(url)
-    resp.raise_for_status()
-    df = pd.read_excel(BytesIO(resp.content), sheet_name=sheet_name)
+    df = pd.read_excel((url), sheet_name=sheet_name)
     st.write("✅ Excel file successfully loaded.")
 
     # 2) Base clean
