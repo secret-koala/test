@@ -24,11 +24,7 @@ def fuzzy_map(series: pd.Series, options: list[str], default=np.nan, lower: bool
 @st.cache_data
 def import_and_clean(sheet_name: int = 0) -> pd.DataFrame:
     # 1) Load
-    url = (
-        "https://github.com/maxpquint/"
-        "econ8320semesterproject/raw/main/"
-        "UNO%20Service%20Learning%20Data%20Sheet%20De-Identified%20Version.xlsx"
-    )
+    url = ("https://github.com/StefVarg1/Semester-Project/raw/refs/heads/main/UNO%20Service%20Learning%20Data%20Sheet%20De-Identified%20Version.xlsx")
     df = pd.read_excel((url), sheet_name=sheet_name)
     st.write("✅ Excel file successfully loaded.")
 
