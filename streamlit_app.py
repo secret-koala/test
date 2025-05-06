@@ -8,11 +8,11 @@ import plotly.express as px
 
 # Function to import and clean Excel data from GitHub
 @st.cache_data
-def import_excel_from_github(sheet_name=0):
+def import_excel_from_github(sheet_name: int=0):
     github_raw_url = "https://github.com/StefVarg1/Semester-Project/raw/refs/heads/main/UNO%20Service%20Learning%20Data%20Sheet%20De-Identified%20Version.xlsx"
 
     try:
-        response = requests.get(github_raw_url)
+        response = requests.get(github_raw_url) 
         response.raise_for_status()
         df = pd.read_excel(BytesIO(response.content), sheet_name=sheet_name)
         st.write("Excel file successfully loaded into DataFrame.")
